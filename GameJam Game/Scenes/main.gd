@@ -1,6 +1,6 @@
 extends Node
 
-var TOTAL_MINES : int
+var TOTAL_MINES : int = 30
 var time_elapsed : float
 var mines_left : int
 var first_click : bool
