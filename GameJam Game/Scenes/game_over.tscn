@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://oihxuxit1i3g"]
+
+[ext_resource type="StyleBox" uid="uid://jr0lkvcv0nlw" path="res://Scenes/new_style_box_flat.tres" id="1_4oykc"]
+[ext_resource type="Script" path="res://Scenes/game_over.gd" id="1_yaiw2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy1il"]
+bg_color = Color(0.301159, 0.673967, 0.620249, 1)
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_yaiw2")
+
+[node name="HardButton" type="Button" parent="."]
+offset_left = 390.0
+offset_top = 700.0
+offset_right = 540.0
+offset_bottom = 750.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("1_4oykc")
+theme_override_styles/hover = ExtResource("1_4oykc")
+theme_override_styles/pressed = ExtResource("1_4oykc")
+theme_override_styles/disabled = ExtResource("1_4oykc")
+theme_override_styles/focus = ExtResource("1_4oykc")
+text = "HARD MODE"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 250.0
+offset_top = 335.0
+offset_right = 500.0
+offset_bottom = 415.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dy1il")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -27.5
+offset_right = 88.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyButton" type="Button" parent="."]
+offset_left = 210.0
+offset_top = 700.0
+offset_right = 360.0
+offset_bottom = 750.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("1_4oykc")
+theme_override_styles/hover = ExtResource("1_4oykc")
+theme_override_styles/pressed = ExtResource("1_4oykc")
+theme_override_styles/disabled = ExtResource("1_4oykc")
+theme_override_styles/focus = ExtResource("1_4oykc")
+text = "EASY MODE"
+
+[connection signal="pressed" from="HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="EasyButton" to="." method="_on_easy_button_pressed"]
